@@ -51,18 +51,18 @@ const posts = [
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/600/300?",
+    image: "https://picsum.photos/600/300?random=1",
     likesCounter: 3,
   },
   {
     author: "Gastone Amato",
-    authorPic: "https://picsum.photos/300/300?",
+    authorPic: "https://picsum.photos/300/300?random=2",
     date: "01/02/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/600/300?",
-    likesCounter: 3,
+    image: "",
+    likesCounter: 18,
   },
   {
     author: "Paloma Ferraris",
@@ -71,38 +71,38 @@ const posts = [
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/600/300?",
-    likesCounter: 3,
+    image: "https://picsum.photos/600/300?random=3",
+    likesCounter: 15,
   },
   {
     author: "Elena Balla",
-    authorPic: "https://picsum.photos/300/300?",
+    authorPic: "https://picsum.photos/300/300?random=4",
     date: "11/05/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/600/300?",
-    likesCounter: 3,
+    image: "",
+    likesCounter: 50,
   },
   {
     author: "Geronimo Germano",
-    authorPic: "https://picsum.photos/300/300?",
+    authorPic: "https://picsum.photos/300/300?random=5",
     date: "10/14/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/600/300?",
-    likesCounter: 3,
+    image: "https://picsum.photos/600/300?random=6",
+    likesCounter: 22,
   },
   {
     author: "Giampiero Semitecolo",
-    authorPic: "https://picsum.photos/300/300?",
+    authorPic: "https://picsum.photos/300/300?random=7",
     date: "05/29/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/600/300?",
-    likesCounter: 3,
+    image: "https://picsum.photos/600/300?random=8",
+    likesCounter: 44,
   },
 ];
 
@@ -165,4 +165,22 @@ posts.forEach((post, i) => {
 
 postsListElement.innerHTML = postList;
 
-console.log(posts);
+//Recupero i bottoni likes dei post
+const likesButtons = document.querySelectorAll(".likes .like-button");
+const likesField = document.querySelectorAll(".likes .js-likes-counter");
+
+//Aggiungo funzione click bottoni
+
+likesButtons.forEach((button, i) => {
+  button.addEventListener("click", () => {
+    if (!button.classList.contains("like-button--liked")) {
+      button.classList.add("like-button--liked");
+      const updateCounter = ++posts[i].likesCounter;
+      likesField[i].innerText = updateCounter;
+    } else {
+      button.classList.remove("like-button--liked");
+      const updateCounter = --posts[i].likesCounter;
+      likesField[i].innerText = updateCounter;
+    }
+  });
+});
