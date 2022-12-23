@@ -38,7 +38,7 @@ const getProfilePic = (author, authorPic) => {
 const getLocalDate = (date) => {
   const msDate = Date.parse(date);
   const formattedDate = new Date(msDate);
-  const localDate = formattedDate.toLocaleDateString("it");
+  const localDate = formattedDate.toLocaleDateString("en-GB");
   return localDate;
 };
 
@@ -57,7 +57,7 @@ const posts = [
   {
     author: "Gastone Amato",
     authorPic: "https://picsum.photos/300/300?",
-    date: "12-23-2022",
+    date: "01/02/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
@@ -67,7 +67,7 @@ const posts = [
   {
     author: "Paloma Ferraris",
     authorPic: "",
-    date: "12-23-2022",
+    date: "09/20/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
@@ -77,7 +77,7 @@ const posts = [
   {
     author: "Elena Balla",
     authorPic: "https://picsum.photos/300/300?",
-    date: "12-23-2022",
+    date: "11/05/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
@@ -87,7 +87,7 @@ const posts = [
   {
     author: "Geronimo Germano",
     authorPic: "https://picsum.photos/300/300?",
-    date: "12-23-2022",
+    date: "10/14/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
@@ -97,7 +97,7 @@ const posts = [
   {
     author: "Giampiero Semitecolo",
     authorPic: "https://picsum.photos/300/300?",
-    date: "12-23-2022",
+    date: "05/29/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
