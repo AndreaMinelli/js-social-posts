@@ -115,7 +115,7 @@ posts.forEach((post, i) => {
   //Recupero le chiavi dell'oggetto
   const { author, authorPic, date, text, image, likesCounter } = post;
   //Creo ID
-  post.id = ++i;
+  const id = (post.id = ++i);
   //Genero la foto profilo
   const authorProfilePic = getProfilePic(author, authorPic);
   //Setto la data con formato italiano
@@ -142,7 +142,6 @@ posts.forEach((post, i) => {
                 <div class="likes__cta">
                 <button
                     class="like-button js-like-button"
-                    href="#"
                     data-postid="1"
                 >
                     <i
@@ -154,7 +153,7 @@ posts.forEach((post, i) => {
                 </div>
                 <div class="likes__counter">
                 Piace a
-                <b id="like-counter-1" class="js-likes-counter">${likesCounter}</b> persone
+                <b id="like-counter-${id}" class="js-likes-counter">${likesCounter}</b> persone
                 </div>
             </div>
         </div>
