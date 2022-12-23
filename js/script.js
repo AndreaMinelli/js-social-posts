@@ -17,10 +17,37 @@ Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i 
 Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 */
 
+//Creo funzione per creare foto profilo se non presente
+const getProfilePic = (author, authorPic) => {
+  let profilePic = `
+    <img class="profile-pic-default" src="${authorPic}" alt="${author}"/>
+    `;
+
+  if (!authorPic) {
+    const splitName = author.split(" ");
+    let firstLetter = "";
+    splitName.forEach((word) => {
+      firstLetter += word[0].toUpperCase();
+    });
+    profilePic = ` <span class="profile-pic">${firstLetter}</span>`;
+  }
+  return profilePic;
+};
+
 //Creo array di post
 const posts = [
   {
-    author: "Pinco Pallino",
+    author: "Tiziana Cesaroni",
+    authorPic: "",
+    date: "12-23-2022",
+    text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
+            minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
+            Et nihil ullam aut alias.",
+    image: "https://picsum.photos/600/300?",
+    likesCounter: 3,
+  },
+  {
+    author: "Gastone Amato",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
@@ -30,7 +57,17 @@ const posts = [
     likesCounter: 3,
   },
   {
-    author: "Pinco Pallino",
+    author: "Paloma Ferraris",
+    authorPic: "",
+    date: "12-23-2022",
+    text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
+            minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
+            Et nihil ullam aut alias.",
+    image: "https://picsum.photos/600/300?",
+    likesCounter: 3,
+  },
+  {
+    author: "Elena Balla",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
@@ -40,7 +77,7 @@ const posts = [
     likesCounter: 3,
   },
   {
-    author: "Pinco Pallino",
+    author: "Geronimo Germano",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
@@ -50,27 +87,7 @@ const posts = [
     likesCounter: 3,
   },
   {
-    author: "Pinco Pallino",
-    authorPic: "https://picsum.photos/300/300?",
-    date: "12-23-2022",
-    text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
-            minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
-            Et nihil ullam aut alias.",
-    image: "https://picsum.photos/600/300?",
-    likesCounter: 3,
-  },
-  {
-    author: "Pinco Pallino",
-    authorPic: "https://picsum.photos/300/300?",
-    date: "12-23-2022",
-    text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
-            minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
-            Et nihil ullam aut alias.",
-    image: "https://picsum.photos/600/300?",
-    likesCounter: 3,
-  },
-  {
-    author: "Pinco Pallino",
+    author: "Giampiero Semitecolo",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
@@ -89,16 +106,14 @@ let postList = "";
 posts.forEach((post, i) => {
   const { author, authorPic, date, text, image, likesCounter } = post;
   post.id = ++i;
+
+  const authorProfilePic = getProfilePic(author, authorPic);
   postList += `
     <div class="post">
         <div class="post__header">
             <div class="post-meta">
                 <div class="post-meta__icon">
-                <img
-                    class="profile-pic-default"
-                    src="${authorPic}"
-                    alt="${author}"
-                />
+                ${authorProfilePic}
                 </div>
                 <div class="post-meta__data">
                 <div class="post-meta__author">${author}</div>
