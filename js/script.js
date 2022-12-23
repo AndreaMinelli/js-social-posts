@@ -22,67 +22,67 @@ const posts = [
   {
     id: 1,
     author: "Pinco Pallino",
-    authorPic: "https://picsum.photos/200/300?",
+    authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/200/300?",
+    image: "https://picsum.photos/600/300?",
     likesCounter: 3,
   },
   {
     id: 1,
     author: "Pinco Pallino",
-    authorPic: "https://picsum.photos/200/300?",
+    authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/200/300?",
+    image: "https://picsum.photos/600/300?",
     likesCounter: 3,
   },
   {
     id: 1,
     author: "Pinco Pallino",
-    authorPic: "https://picsum.photos/200/300?",
+    authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/200/300?",
+    image: "https://picsum.photos/600/300?",
     likesCounter: 3,
   },
   {
     id: 1,
     author: "Pinco Pallino",
-    authorPic: "https://picsum.photos/200/300?",
+    authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/200/300?",
+    image: "https://picsum.photos/600/300?",
     likesCounter: 3,
   },
   {
     id: 1,
     author: "Pinco Pallino",
-    authorPic: "https://picsum.photos/200/300?",
+    authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/200/300?",
+    image: "https://picsum.photos/600/300?",
     likesCounter: 3,
   },
   {
     id: 1,
     author: "Pinco Pallino",
-    authorPic: "https://picsum.photos/200/300?",
+    authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
-    image: "https://picsum.photos/200/300?",
+    image: "https://picsum.photos/600/300?",
     likesCounter: 3,
   },
 ];
@@ -101,7 +101,7 @@ posts.forEach((post) => {
             <div class="post-meta">
                 <div class="post-meta__icon">
                 <img
-                    class="profile-pic"
+                    class="profile-pic-default"
                     src="${authorPic}"
                     alt="${author}"
                 />
