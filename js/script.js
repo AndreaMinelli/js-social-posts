@@ -20,7 +20,6 @@ Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e inc
 //Creo array di post
 const posts = [
   {
-    id: 1,
     author: "Pinco Pallino",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
@@ -31,7 +30,6 @@ const posts = [
     likesCounter: 3,
   },
   {
-    id: 1,
     author: "Pinco Pallino",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
@@ -42,7 +40,6 @@ const posts = [
     likesCounter: 3,
   },
   {
-    id: 1,
     author: "Pinco Pallino",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
@@ -53,7 +50,6 @@ const posts = [
     likesCounter: 3,
   },
   {
-    id: 1,
     author: "Pinco Pallino",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
@@ -64,7 +60,6 @@ const posts = [
     likesCounter: 3,
   },
   {
-    id: 1,
     author: "Pinco Pallino",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
@@ -75,7 +70,6 @@ const posts = [
     likesCounter: 3,
   },
   {
-    id: 1,
     author: "Pinco Pallino",
     authorPic: "https://picsum.photos/300/300?",
     date: "12-23-2022",
@@ -92,9 +86,9 @@ const postsListElement = document.querySelector(".posts-list");
 
 let postList = "";
 
-posts.forEach((post) => {
+posts.forEach((post, i) => {
   const { author, authorPic, date, text, image, likesCounter } = post;
-
+  post.id = ++i;
   postList += `
     <div class="post">
         <div class="post__header">
@@ -143,3 +137,5 @@ posts.forEach((post) => {
 }, "");
 
 postsListElement.innerHTML = postList;
+
+console.log(posts);
