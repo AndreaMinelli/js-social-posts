@@ -34,12 +34,20 @@ const getProfilePic = (author, authorPic) => {
   return profilePic;
 };
 
+//Creo funzione per formattare la data
+const getLocalDate = (date) => {
+  const msDate = Date.parse(date);
+  const formattedDate = new Date(msDate);
+  const localDate = formattedDate.toLocaleDateString("it");
+  return localDate;
+};
+
 //Creo array di post
 const posts = [
   {
     author: "Tiziana Cesaroni",
     authorPic: "",
-    date: "12-23-2022",
+    date: "12/23/2022",
     text: "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio\
             minima iusto. Ad ad maiores et sint voluptate recusandae architecto.\
             Et nihil ullam aut alias.",
@@ -104,10 +112,14 @@ const postsListElement = document.querySelector(".posts-list");
 let postList = "";
 
 posts.forEach((post, i) => {
+  //Recupero le chiavi dell'oggetto
   const { author, authorPic, date, text, image, likesCounter } = post;
+  //Creo ID
   post.id = ++i;
-
+  //Genero la foto profilo
   const authorProfilePic = getProfilePic(author, authorPic);
+  //Setto la data con formato italiano
+  const localDate = getLocalDate(date);
   postList += `
     <div class="post">
         <div class="post__header">
@@ -117,7 +129,7 @@ posts.forEach((post, i) => {
                 </div>
                 <div class="post-meta__data">
                 <div class="post-meta__author">${author}</div>
-                <div class="post-meta__time">${date}</div>
+                <div class="post-meta__time">${localDate}</div>
                 </div>
             </div>
             </div>
